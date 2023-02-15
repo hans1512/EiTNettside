@@ -1,22 +1,8 @@
 import './App.css';
-<<<<<<< HEAD
 import React from 'react';
-import Slider from './components/slider';
-import SliderWithImages from "./components/SliderWithImages"
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <SliderWithImages/>
-      </header>
-    </div>
-  );
-=======
-
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "./components/slider"
-
+import SliderWithImages from './components/SliderWithImages';
 function App() {
 
     return (
@@ -39,14 +25,13 @@ function App() {
                 ]}  type='Power source'/>
             </div>
             <div className="image-section">
-                images:)
+            <SliderWithImages/>    
             </div>
             <div className="output-section">
                 Output :)
             </div>
         </div>
     );
->>>>>>> 0a5dc63204d7cf1d35439aa2e61b89d1d2da95c5
 }
 
 export default App;
