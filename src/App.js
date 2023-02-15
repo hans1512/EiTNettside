@@ -3,6 +3,7 @@ import './App.css';
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "./components/slider"
 import * as React from 'react'
+import InputLayer from "./components/input";
 
 const App = () => {
 
@@ -16,9 +17,7 @@ const App = () => {
     return (
         <div className="App">
             <div className="input-section">
-                <Slider/>
-                <Slider/>
-                <Slider/>
+                <InputLayer/>
                 <Dropdown items={[
                     <button onClick={setCountryState}>Norge</button>,
                     <button onClick={setCountryState}>Kina</button>,
