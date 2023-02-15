@@ -2,6 +2,12 @@
     position: relative;
 }
 
+.dropdown-button {
+    min-width: 15vh;
+    justify-content: left;
+    text-align: start;
+}
+
 .menu {
     position: absolute;
 
