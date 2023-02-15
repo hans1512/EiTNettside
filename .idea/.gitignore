@@ -6,5 +6,8 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+<<<<<<< HEAD
 /inspectionProfiles
 /sonarlint
+=======
+>>>>>>> adc84f8115d7ab3c981a30d21bb9c72965980e64
