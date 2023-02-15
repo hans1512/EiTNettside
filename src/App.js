@@ -2,7 +2,6 @@ import './App.css';
 
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "./components/slider"
-import SliderWithImages from "./components/SliderWithImages";
 
 function App() {
 
@@ -27,7 +26,6 @@ function App() {
         </div>
         <div className="image-section">
           images:)
-          <SliderWithImages/>
         </div>
         <div className="output-section">
           Output :)
