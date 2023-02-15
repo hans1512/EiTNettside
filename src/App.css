@@ -18,7 +18,7 @@
 }
 
 .input-section {
-  background-color: gray;
+  background-color: lightblue;
   min-height: 100vh;
   min-width: 33.5%;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .image-section {
-  background-color: blue;
+  background-color: lightblue;
   min-height: 100vh;
   min-width: 33%;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .output-section {
-  background-color: red;
+  background-color: lightblue;
   min-height: 100vh;
   min-width: 33.5%;
   display: flex;

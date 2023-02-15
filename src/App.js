@@ -2,12 +2,16 @@ import './App.css';
 
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "./components/slider"
+import * as React from 'react'
 
 const App = () => {
 
     const handleDropdown = (dropdown) => {
-        console.log(dropdown)
+        console.log(countryState)
     };
+
+    const [countryState, setCountryState] = React.useState('')
+    const [powerState, setPowerState] = React.useState('')
 
     return (
         <div className="App">
@@ -16,17 +20,19 @@ const App = () => {
                 <Slider/>
                 <Slider/>
                 <Dropdown items={[
-                    <button onClick={handleDropdown}>Norge</button>,
-                    <button onClick={handleDropdown}>Kina</button>,
-                    <button onClick={handleDropdown}>Tyskland</button>,
-                    <button onClick={handleDropdown}>USA</button>,
+                    <button onClick={setCountryState}>Norge</button>,
+                    <button onClick={setCountryState}>Kina</button>,
+                    <button onClick={setCountryState}>Tyskland</button>,
+                    <button onClick={setCountryState}>USA</button>,
                 ]} type='Select country'/>
+                {countryState}
                 <Dropdown items={[
-                    <button onClick={handleDropdown}>Vannkraft</button>,
-                    <button onClick={handleDropdown}>Solceller</button>,
-                    <button onClick={handleDropdown}>Kullkraft</button>,
-                    <button onClick={handleDropdown}>Atomkraft</button>,
+                    <button onClick={setPowerState}>Vannkraft</button>,
+                    <button onClick={setPowerState}>Solceller</button>,
+                    <button onClick={setPowerState}>Kullkraft</button>,
+                    <button onClick={setPowerState}>Atomkraft</button>,
                 ]} type='Power source'/>
+                {powerState}
             </div>
             <div className="image-section">
                 images:)
