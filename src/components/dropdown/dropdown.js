@@ -10,12 +10,9 @@ const Dropdown = ({items, type}) => {
     };
 
     const handleDropdownOptions = (option) => {
-        // do something
         setOpen(false);
         setSelected(option)
-        console.log(option)
     };
-
 
     return (
         <div className="dropdown">
@@ -27,6 +24,7 @@ const Dropdown = ({items, type}) => {
                             {React.cloneElement(menuItem, {
                                 onClick: () => {
                                     handleDropdownOptions(menuItem.props.children)
+                                    menuItem.props.onClick(menuItem.props.children)
                                 },
                             })}
                         </li>

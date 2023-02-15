@@ -9,10 +9,11 @@
 }
 
 .menu {
+    z-index: 1;
     position: absolute;
 
     list-style-type: none;
-    margin: 5px 0;
+    margin: -25px 0;
     padding: 0;
 
     border: 1px solid grey;
