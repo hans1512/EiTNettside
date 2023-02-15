@@ -17,7 +17,7 @@ function App() {
                 images:)
             </div>
             <div className="output-section">
-                images:)
+                Output :)
             </div>
         </div>
     );
