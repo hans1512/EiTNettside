@@ -1,16 +1,14 @@
 import './App.css';
 import React from 'react';
 import Dropdown from "./components/dropdown/dropdown";
-import Slider from "./components/slider"
-import SliderWithImages from './components/SliderWithImages';
+import InputLayer from './components/input';
+
 function App() {
 
     return (
         <div className="App">
             <div className="input-section">
-                <Slider/>
-                <Slider/>
-                <Slider/>
+                <InputLayer/>
                 <Dropdown items={[
                     <button>Norge</button>,
                     <button>Kina</button>,
@@ -25,10 +23,10 @@ function App() {
                 ]}  type='Power source'/>
             </div>
             <div className="image-section">
-            <SliderWithImages/>    
+            
             </div>
             <div className="output-section">
-                Output :)
+            
             </div>
         </div>
     );
