@@ -7,11 +7,11 @@ import solkraft from "./images/solkraft.svg";
 import vannkraft from "./images/vannkraft.svg";
 import vindkraft from "./images/vindkraft.svg";
 import kullkraft from "./images/kullkraft.svg";
-import tyskland from "./images/tyskland.svg"
-import kina from "./images/kina.svg"
-import usa from "./images/usa.svg"
-import norge from "./images/norge.svg"
-import pil from "./images/pil.svg"
+import tyskland from "./images/tyskland.svg";
+import kina from "./images/kina.svg";
+import usa from "./images/usa.svg";
+import norge from "./images/norge.svg";
+import pil from "./images/pil.svg";
 
 function App() {
   const [slider1, setSlider1] = useState(20);
@@ -34,15 +34,14 @@ function App() {
     console.log(countryState);
   };
 
-  const [countryState, setCountryState] = React.useState("");
-  const [powerState, setPowerState] = React.useState("");
+  const [countryState, setCountryState] = React.useState("Norge");
+  const [powerState, setPowerState] = React.useState("Vannkraft");
 
   return (
     <div className="App">
       <div className="input-section">
         <div>
           <div>
-            
             <small>The percentage of SAF in the fuel</small>
             <Slider
               defaultValue={20}
@@ -89,6 +88,7 @@ function App() {
             The state is {slider1}, {slider2} and {slider3}
           </h2>
         </div>
+        <div>Power source</div>
         <Dropdown
           items={[
             <button onClick={setPowerState}>Vannkraft</button>,
@@ -96,9 +96,9 @@ function App() {
             <button onClick={setPowerState}>Vindkraft</button>,
             <button onClick={setPowerState}>Kullkraft</button>,
           ]}
-          type="Power source"
+          type="Vannkraft"
         />
-        {powerState}
+        <div>Country</div>
         <Dropdown
           items={[
             <button onClick={setCountryState}>Norge</button>,
@@ -106,9 +106,8 @@ function App() {
             <button onClick={setCountryState}>Tyskland</button>,
             <button onClick={setCountryState}>USA</button>,
           ]}
-          type="Select country"
+          type="Norge"
         />
-        {countryState}
       </div>
       <div className="image-section">
         {powerState === "Vannkraft" && (
@@ -123,9 +122,11 @@ function App() {
         {powerState === "Vindkraft" && (
           <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
         )}
+
         <div className="arrow-image">
-          <img src={pil} className="arrow-image" alt="pil" ></img>
+          <img src={pil} className="arrow-image" alt="pil"></img>
         </div>
+
         {countryState === "Kina" && (
           <img src={kina} className="country-image" alt="Kina"></img>
         )}
