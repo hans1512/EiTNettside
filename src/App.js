@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "@mui/material/Slider";
 
+import solkraft from "./images/solkraft.jpg";
+import vannkraft from "./images/vannkraft.jpg";
+import vindkraft from "./images/vindkraft.jpg";
+import kullkraft from "./images/kullkraft.jpg";
+
 function App() {
   const [slider1, setSlider1] = useState(20);
 
@@ -81,9 +86,9 @@ function App() {
         <Dropdown
           items={[
             <button onClick={setPowerState}>Vannkraft</button>,
-            <button onClick={setPowerState}>Solceller</button>,
+            <button onClick={setPowerState}>Solkraft</button>,
+            <button onClick={setPowerState}>Vindkraft</button>,
             <button onClick={setPowerState}>Kullkraft</button>,
-            <button onClick={setPowerState}>Atomkraft</button>,
           ]}
           type="Power source"
         />
@@ -99,8 +104,24 @@ function App() {
         />
         {countryState}
       </div>
-      <div className="image-section"></div>
-      <div className="output-section"></div>
+      <div className="image-section">
+        {powerState === "Vannkraft" && (
+          <img src={vannkraft} className="power-image" alt="Vannkraft"></img>
+        )}
+        {powerState === "Kullkraft" && (
+          <img src={kullkraft} className="power-image" alt="Kullkraft"></img>
+        )}
+        {powerState === "Solkraft" && (
+          <img src={solkraft} className="power-image" alt="Solkraft"></img>
+        )}
+        {powerState === "Vindkraft" && (
+          <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
+        )}
+      </div>
+      <div className="output-section">
+        The total CO2 output for these settings is
+        {slider1 * slider2 * slider3}
+      </div>
     </div>
   );
 }
