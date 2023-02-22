@@ -140,7 +140,8 @@ function App() {
         )}
       </div>
       <div className="output-section">
-        The total CO2 output for these settings is
+        <div>The total CO2 output for these settings is</div>
+
         {slider1 * slider2 * slider3}
       </div>
     </div>
