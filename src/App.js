@@ -2,6 +2,11 @@ import "./App.css";
 import React, { useState } from "react";
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "@mui/material/Slider";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import solkraft from "./images/solkraft.svg";
 import vannkraft from "./images/vannkraft.svg";
@@ -33,9 +38,18 @@ function App() {
   const handleDropdown = (dropdown) => {
     console.log(countryState);
   };
+  const [powerState, setPowerState] = React.useState('Vannkraft');
+
+  const handleChangePowerState = (event: SelectChangeEvent) => {
+    setPowerState(event.target.value);
+  };
 
   const [countryState, setCountryState] = React.useState("Norge");
-  const [powerState, setPowerState] = React.useState("Vannkraft");
+
+  const handleChangeCountryState = (event: SelectChangeEvent) => {
+    setCountryState(event.target.value);
+  };
+///  const [powerState, setPowerState] = React.useState("Vannkraft");
 
   return (
     <div className="App">
@@ -89,25 +103,41 @@ function App() {
           </h2>
         </div>
         <div>Power source</div>
-        <Dropdown
-          items={[
-            <button onClick={setPowerState}>Vannkraft</button>,
-            <button onClick={setPowerState}>Solkraft</button>,
-            <button onClick={setPowerState}>Vindkraft</button>,
-            <button onClick={setPowerState}>Kullkraft</button>,
-          ]}
-          type="Vannkraft"
-        />
+        <Box sx={{ minWidth: 150 }}>
+          <FormControl fullWidth>
+            <InputLabel id="energikilde">Kilde</InputLabel>
+            <Select
+              labelId="energikilde-label"
+              id="energikilde"
+              value={powerState}
+              label="Age"
+              onChange={handleChangePowerState}
+            >
+              <MenuItem value={"Vannkraft"}>Vannkraft</MenuItem>
+              <MenuItem value={"Solkraft"}>Solkraft</MenuItem>
+              <MenuItem value={"Vindkraft"}>Vindkraft</MenuItem>
+              <MenuItem value={"Kullkraft"}>Kullkraft</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
         <div>Country</div>
-        <Dropdown
-          items={[
-            <button onClick={setCountryState}>Norge</button>,
-            <button onClick={setCountryState}>Kina</button>,
-            <button onClick={setCountryState}>Tyskland</button>,
-            <button onClick={setCountryState}>USA</button>,
-          ]}
-          type="Norge"
-        />
+        <Box sx={{ minWidth: 150 }}>
+          <FormControl fullWidth>
+            <InputLabel id="land">land</InputLabel>
+            <Select
+              labelId="land-label"
+              id="land"
+              value={countryState}
+              label="land"
+              onChange={handleChangeCountryState}
+            >
+              <MenuItem value={"Norge"}>Norge</MenuItem>
+              <MenuItem value={"USA"}>USA</MenuItem>
+              <MenuItem value={"Tyskland"}>Tyskland</MenuItem>
+              <MenuItem value={"Kina"}>Kina</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
       <div className="image-section">
         {powerState === "Vannkraft" && (
