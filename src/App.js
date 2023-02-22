@@ -2,11 +2,11 @@ import "./App.css";
 import React, { useState } from "react";
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "@mui/material/Slider";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import solkraft from "./images/solkraft.svg";
 import vannkraft from "./images/vannkraft.svg";
@@ -38,7 +38,7 @@ function App() {
   const handleDropdown = (dropdown) => {
     console.log(countryState);
   };
-  const [powerState, setPowerState] = React.useState('Vannkraft');
+  const [powerState, setPowerState] = React.useState("Vannkraft");
 
   const handleChangePowerState = (event: SelectChangeEvent) => {
     setPowerState(event.target.value);
@@ -49,7 +49,7 @@ function App() {
   const handleChangeCountryState = (event: SelectChangeEvent) => {
     setCountryState(event.target.value);
   };
-///  const [powerState, setPowerState] = React.useState("Vannkraft");
+  ///  const [powerState, setPowerState] = React.useState("Vannkraft");
 
   return (
     <div className="App">
@@ -103,7 +103,7 @@ function App() {
           </h2>
         </div>
         <div>Power source</div>
-        <Box sx={{ minWidth: 150 }}>
+        <Box sx={{ minWidth: 300 }}>
           <FormControl fullWidth>
             <InputLabel id="energikilde">Kilde</InputLabel>
             <Select
@@ -120,24 +120,28 @@ function App() {
             </Select>
           </FormControl>
         </Box>
-        <div>Country</div>
-        <Box sx={{ minWidth: 150 }}>
-          <FormControl fullWidth>
-            <InputLabel id="land">land</InputLabel>
-            <Select
-              labelId="land-label"
-              id="land"
-              value={countryState}
-              label="land"
-              onChange={handleChangeCountryState}
-            >
-              <MenuItem value={"Norge"}>Norge</MenuItem>
-              <MenuItem value={"USA"}>USA</MenuItem>
-              <MenuItem value={"Tyskland"}>Tyskland</MenuItem>
-              <MenuItem value={"Kina"}>Kina</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
+        {powerState === "Vannkraft" && (
+          <div>
+            <div>Scenario</div>
+            <Box sx={{ minWidth: 300 }}>
+              <FormControl fullWidth>
+                <InputLabel id="land">Scenario</InputLabel>
+                <Select
+                  labelId="land-label"
+                  id="land"
+                  value={countryState}
+                  label="land"
+                  onChange={handleChangeCountryState}
+                >
+                  <MenuItem value={"Norge"}>Norge</MenuItem>
+                  <MenuItem value={"USA"}>USA</MenuItem>
+                  <MenuItem value={"Tyskland"}>Tyskland</MenuItem>
+                  <MenuItem value={"Kina"}>Kina</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </div>
+        )}
       </div>
       <div className="image-section">
         <div className="images">
