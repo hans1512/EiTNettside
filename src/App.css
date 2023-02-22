@@ -44,7 +44,11 @@
   width: 30vh;
   height: 30vh;
 }
-
+.country-image{
+  padding-top: 1vh;
+  width: 30vh;
+  height: 30vh;
+}
 .output-section {
   min-height: 100vh;
   min-width: 33.5%;

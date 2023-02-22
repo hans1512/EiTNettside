@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import Dropdown from "./components/dropdown/dropdown";
 import Slider from "@mui/material/Slider";
 
-import solkraft from "./images/solkraft.jpg";
-import vannkraft from "./images/vannkraft.jpg";
-import vindkraft from "./images/vindkraft.jpg";
-import kullkraft from "./images/kullkraft.jpg";
+import solkraft from "./images/solkraft.svg";
+import vannkraft from "./images/vannkraft.svg";
+import vindkraft from "./images/vindkraft.svg";
+import kullkraft from "./images/kullkraft.svg";
+import tyskland from "./images/tyskland.svg"
+import kina from "./images/kina.svg"
+import usa from "./images/usa.svg"
+import norge from "./images/norge.svg"
 
 function App() {
   const [slider1, setSlider1] = useState(20);
@@ -116,6 +120,20 @@ function App() {
         )}
         {powerState === "Vindkraft" && (
           <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
+        )}
+      </div>
+      <div className="image-section">
+        {countryState === "Kina" && (
+          <img src={kina} className="country-image" alt="Kina"></img>
+        )}
+        {countryState === "Norge" && (
+          <img src={norge} className="country-image" alt="Norge"></img>
+        )}
+        {countryState === "USA" && (
+          <img src={usa} className="country-image" alt="USA"></img>
+        )}
+        {countryState === "Tyskland" && (
+          <img src={tyskland} className="country-image" alt="Tyskland"></img>
         )}
       </div>
       <div className="output-section">
