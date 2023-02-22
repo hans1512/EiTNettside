@@ -121,8 +121,6 @@ function App() {
         {powerState === "Vindkraft" && (
           <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
         )}
-      </div>
-      <div className="image-section">
         {countryState === "Kina" && (
           <img src={kina} className="country-image" alt="Kina"></img>
         )}
