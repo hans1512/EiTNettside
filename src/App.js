@@ -110,35 +110,37 @@ function App() {
         />
       </div>
       <div className="image-section">
-        {powerState === "Vannkraft" && (
-          <img src={vannkraft} className="power-image" alt="Vannkraft"></img>
-        )}
-        {powerState === "Kullkraft" && (
-          <img src={kullkraft} className="power-image" alt="Kullkraft"></img>
-        )}
-        {powerState === "Solkraft" && (
-          <img src={solkraft} className="power-image" alt="Solkraft"></img>
-        )}
-        {powerState === "Vindkraft" && (
-          <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
-        )}
+        <div className="images">
+          {powerState === "Vannkraft" && (
+            <img src={vannkraft} className="power-image" alt="Vannkraft"></img>
+          )}
+          {powerState === "Kullkraft" && (
+            <img src={kullkraft} className="power-image" alt="Kullkraft"></img>
+          )}
+          {powerState === "Solkraft" && (
+            <img src={solkraft} className="power-image" alt="Solkraft"></img>
+          )}
+          {powerState === "Vindkraft" && (
+            <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
+          )}
+
+          {countryState === "Kina" && (
+            <img src={kina} className="country-image" alt="Kina"></img>
+          )}
+          {countryState === "Norge" && (
+            <img src={norge} className="country-image" alt="Norge"></img>
+          )}
+          {countryState === "USA" && (
+            <img src={usa} className="country-image" alt="USA"></img>
+          )}
+          {countryState === "Tyskland" && (
+            <img src={tyskland} className="country-image" alt="Tyskland"></img>
+          )}
+        </div>
 
         <div className="arrow-image">
           <img src={pil} className="arrow-image" alt="pil"></img>
         </div>
-
-        {countryState === "Kina" && (
-          <img src={kina} className="country-image" alt="Kina"></img>
-        )}
-        {countryState === "Norge" && (
-          <img src={norge} className="country-image" alt="Norge"></img>
-        )}
-        {countryState === "USA" && (
-          <img src={usa} className="country-image" alt="USA"></img>
-        )}
-        {countryState === "Tyskland" && (
-          <img src={tyskland} className="country-image" alt="Tyskland"></img>
-        )}
       </div>
       <div className="output-section">
         <div>The total CO2 output for these settings is</div>
