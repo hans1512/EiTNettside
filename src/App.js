@@ -1,43 +1,32 @@
 import './App.css';
-
+import React from 'react';
 import Dropdown from "./components/dropdown/dropdown";
-import Slider from "./components/slider"
-import * as React from 'react'
-import InputLayer from "./components/input";
+import InputLayer from './components/input';
 
-const App = () => {
-
-    const handleDropdown = (dropdown) => {
-        console.log(countryState)
-    };
-
-    const [countryState, setCountryState] = React.useState('')
-    const [powerState, setPowerState] = React.useState('')
+function App() {
 
     return (
         <div className="App">
             <div className="input-section">
                 <InputLayer/>
                 <Dropdown items={[
-                    <button onClick={setCountryState}>Norge</button>,
-                    <button onClick={setCountryState}>Kina</button>,
-                    <button onClick={setCountryState}>Tyskland</button>,
-                    <button onClick={setCountryState}>USA</button>,
+                    <button>Norge</button>,
+                    <button>Kina</button>,
+                    <button>Tyskland</button>,
+                    <button>USA</button>,
                 ]} type='Select country'/>
-                {countryState}
                 <Dropdown items={[
-                    <button onClick={setPowerState}>Vannkraft</button>,
-                    <button onClick={setPowerState}>Solceller</button>,
-                    <button onClick={setPowerState}>Kullkraft</button>,
-                    <button onClick={setPowerState}>Atomkraft</button>,
-                ]} type='Power source'/>
-                {powerState}
+                    <button>Vannkraft</button>,
+                    <button>Solceller</button>,
+                    <button>Kullkraft</button>,
+                    <button>Atomkraft</button>,
+                ]}  type='Power source'/>
             </div>
             <div className="image-section">
-                images:)
+            
             </div>
             <div className="output-section">
-                Output :)
+            
             </div>
         </div>
     );
