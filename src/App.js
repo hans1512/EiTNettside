@@ -11,6 +11,7 @@ import tyskland from "./images/tyskland.svg"
 import kina from "./images/kina.svg"
 import usa from "./images/usa.svg"
 import norge from "./images/norge.svg"
+import pil from "./images/pil.svg"
 
 function App() {
   const [slider1, setSlider1] = useState(20);
@@ -41,6 +42,7 @@ function App() {
       <div className="input-section">
         <div>
           <div>
+            
             <small>The percentage of SAF in the fuel</small>
             <Slider
               defaultValue={20}
@@ -121,6 +123,9 @@ function App() {
         {powerState === "Vindkraft" && (
           <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
         )}
+        <div className="arrow-image">
+          <img src={pil} className="arrow-image" alt="pil" ></img>
+        </div>
         {countryState === "Kina" && (
           <img src={kina} className="country-image" alt="Kina"></img>
         )}

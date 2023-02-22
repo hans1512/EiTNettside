@@ -37,6 +37,7 @@
   justify-content: start;
   font-size: calc(10px + 2vmin);
   color: black;
+  position: relative;
 }
 
 .power-image{
@@ -49,6 +50,15 @@
   width: 30vh;
   height: 30vh;
 }
+
+.arrow-image{
+  width: 100%;
+  height:  10vh;
+  flex-direction: row;
+  display: flex;
+
+}
+
 .output-section {
   min-height: 100vh;
   min-width: 33.5%;
