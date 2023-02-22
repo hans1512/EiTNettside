@@ -7,10 +7,10 @@ import solkraft from "./images/solkraft.svg";
 import vannkraft from "./images/vannkraft.svg";
 import vindkraft from "./images/vindkraft.svg";
 import kullkraft from "./images/kullkraft.svg";
-import tyskland from "./images/tyskland.svg"
-import kina from "./images/kina.svg"
-import usa from "./images/usa.svg"
-import norge from "./images/norge.svg"
+import tyskland from "./images/tyskland.svg";
+import kina from "./images/kina.svg";
+import usa from "./images/usa.svg";
+import norge from "./images/norge.svg";
 
 function App() {
   const [slider1, setSlider1] = useState(20);
@@ -121,8 +121,6 @@ function App() {
         {powerState === "Vindkraft" && (
           <img src={vindkraft} className="power-image" alt="Vindkraft"></img>
         )}
-      </div>
-      <div className="image-section">
         {countryState === "Kina" && (
           <img src={kina} className="country-image" alt="Kina"></img>
         )}
@@ -137,7 +135,8 @@ function App() {
         )}
       </div>
       <div className="output-section">
-        The total CO2 output for these settings is
+        <div>The total CO2 output for these settings is</div>
+
         {slider1 * slider2 * slider3}
       </div>
     </div>
