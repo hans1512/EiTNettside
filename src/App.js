@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import Page1 from "./pages/page1";
 import BasicTabs from "./components/tabs";
-
+import TabsFilled from "./components/TabsFilled";
 
 
 function App() {
@@ -19,11 +19,7 @@ function App() {
   }
   return (
     <div>
-      {data}
-      <BasicTabs childToParent={childToParent}/>
-      <div>
-        <Page1 />
-      </div>
+      <TabsFilled />
     </div>
   );
 }
