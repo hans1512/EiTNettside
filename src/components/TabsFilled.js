@@ -6,7 +6,7 @@ import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import Page1 from '../pages/page1';
-import Page2 from '../pages/page2'; 
+import NetZeroAviation from '../pages/NetZeroAviation'; 
 
 const blue = {
   50: '#F0F7FF',
@@ -94,11 +94,11 @@ export default function TabsFilled() {
     <TabsUnstyled defaultValue={0}>
       <TabsList>
         <Tab>Net Zero Emission</Tab>
-        <Tab>Et eller annet</Tab>
-        <Tab>Slik som planlagt</Tab>
+        <Tab>Stated Policies Scenario</Tab>
+        <Tab>Announced Pledges Scenario</Tab>
       </TabsList>
-      <TabPanel value={0}><Page1/></TabPanel>
-      <TabPanel value={1}><Page2/></TabPanel>
+      <TabPanel value={0}><NetZeroAviation/></TabPanel>
+      <TabPanel value={1}><Page1/></TabPanel>
       <TabPanel value={2}>Language page</TabPanel>
     </TabsUnstyled>
   );
