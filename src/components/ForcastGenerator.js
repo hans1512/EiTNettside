@@ -33,42 +33,6 @@ export default function ForecastGenerator(props) {
         {49 < factor && factor < 75 && <Text>Medimum høyt optimismenivå</Text>}
         {factor > 74 && <Text> Høyt optimismenivå</Text>}
       </Box>
-
-      <Box sx={{ minWidth: 300 }}>
-        <FormControl fullWidth>
-          <InputLabel id="Departure">Departure</InputLabel>
-          <Select
-            labelId="departure-label"
-            id="Departure"
-            value={departure}
-            label="Departure"
-            onChange={handleDepartureCange}
-          >
-            <MenuItem value={"Oslo"}>Oslo</MenuItem>
-            <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
-            <MenuItem value={"New York"}>New York</MenuItem>
-            <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
-          </Select>
-        </FormControl>
-        <Box />
-        <Box sx={{ minWidth: 300, paddingTop: 3 }}>
-          <FormControl fullWidth>
-            <InputLabel id="Destination">Destination</InputLabel>
-            <Select
-              labelId="energikilde-label"
-              id="energikilde"
-              value={destination}
-              label="Destination"
-              onChange={handleDestinationChange}
-            >
-              <MenuItem value={"Oslo"}>Oslo</MenuItem>
-              <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
-              <MenuItem value={"New York"}>New York</MenuItem>
-              <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
-      </Box>
     </Container>
   );
 }
