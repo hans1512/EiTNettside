@@ -6,8 +6,10 @@ import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import Page1 from '../pages/page1';
+import Steps from '../pages/Steps';
 import NetZeroAviation from '../pages/NetZeroAviation'; 
 import Forecast from '../pages/Forecast';
+import Aps from '../pages/Aps';
 
 const blue = {
   50: '#F0F7FF',
@@ -100,8 +102,8 @@ export default function TabsFilled() {
         <Tab>Do your own forcast!</Tab>
       </TabsList>
       <TabPanel value={0}><NetZeroAviation/></TabPanel>
-      <TabPanel value={1}><Page1/></TabPanel>
-      <TabPanel value={2}>Language page</TabPanel>
+      <TabPanel value={1}><Steps/></TabPanel>
+      <TabPanel value={2}><Aps /></TabPanel>
       <TabPanel value={3}><Forecast/></TabPanel>
     </TabsUnstyled>
   );
