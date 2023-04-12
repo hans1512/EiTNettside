@@ -10,11 +10,11 @@ import vannkraft from "./../images/vannkraft.svg";
 
 export default function ForecastGenerator(props) {
   const [destination, setDestination] = useState("");
-  const handleDestinationChange = (event: SelectChangeEvent) => {
+  const handleDestinationChange = (event) => {
     setDestination(event.target.value);
   };
   const [departure, setDeparture] = useState("");
-  const handleDepartureCange = (event: SelectChangeEvent) => {
+  const handleDepartureCange = (event) => {
     setDeparture(event.target.value);
   };
 
