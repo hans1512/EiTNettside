@@ -42,7 +42,8 @@ export default function Forecast() {
     const H2 = 0.7634
 
 
-async function changeDistance(departure){
+function changeDistanceDeparture(departure){
+        console.log(departure)
         switch(departure){    
         case "Oslo":
                 switch (destination){
@@ -93,6 +94,58 @@ async function changeDistance(departure){
                 break
           }}
 
+          function changeDistanceDestination(destination){
+            console.log(departure)
+            switch(departure){    
+            case "Oslo":
+                    switch (destination){
+                        case "Oslo":
+                            handleChangeFuel(0)
+                            break
+                        case "Tokyo":
+                            handleChangeFuel(217)
+                            console.log("hei")
+                            break
+                        case "New York":
+                            handleChangeFuel(95)
+                            break
+                        default:
+                            break
+                    }
+                case "Tokyo":
+                    switch (destination){
+                        case "Oslo":
+                            handleChangeFuel(217)
+                            break
+                        case "Tokyo":
+                            handleChangeFuel(0)
+                            break
+                        case "New York":
+                            handleChangeFuel(184)
+                            break
+                        default:
+                            break
+                        }
+                    
+                case "New York": 
+                    switch (destination){
+                        case "Oslo":
+                            handleChangeFuel(95)
+                            break
+                        case "Tokyo":
+                            handleChangeFuel(184)
+                            console.log("tokyo")
+                            break
+                        case "New York":
+                            handleChangeFuel(0)
+                            break
+                        default:
+                            break
+                        }
+                default:
+                    break
+              }}
+
     const [refresh, setRefresh] = useState(false)
 
     const [TimeTaken, setTimeTake] = useState(29700)
@@ -104,9 +157,9 @@ async function changeDistance(departure){
     const [destination, setDestination] = useState("Oslo")
     const handleDestinationChange = (event: SelectChangeEvent) => {
         
+        
+        changeDistanceDestination(event.target.value)
         setDestination(event.target.value)
-        changeDistance(departure)
-
         
         
     }
@@ -114,8 +167,9 @@ async function changeDistance(departure){
     const [departure, setDeparture] = useState("New York")
     const handleDepartureCange = (event: SelectChangeEvent) => {
         
-        setDeparture(event.target.value)
-        changeDistance(departure)
+       changeDistanceDeparture(event.target.value)
+       setDeparture(event.target.value)
+       
     }
 
   
@@ -245,6 +299,7 @@ heat_prize = heat_prize.toFixed(5)
 el_prize = el_prize.toFixed(5)
 CO2_prize = CO2_prize.toFixed(5)
 H2_prize = H2_prize.toFixed(5)
+
     function createData(name, resources, utslipp, pris) {
         return { name, resources, utslipp, pris};
       }
@@ -256,7 +311,8 @@ H2_prize = H2_prize.toFixed(5)
         createData('Electricity (TWh)', El*FuelAmount, el_co2*FuelAmount, el_prize*FuelAmount),
         createData('H2 (t)', H2*FuelAmount, H2_co2*FuelAmount, H2_prize*FuelAmount),
         createData('Heat (TWh)', varme*FuelAmount, heat_co2*FuelAmount, heat_prize*FuelAmount),
-      ];
+        createData('Total', (C02+El+H2+varme)*FuelAmount,(parseFloat(CO2_co2)+parseFloat(el_co2)+parseFloat(H2_co2)+parseFloat(heat_co2))*FuelAmount, (parseFloat(CO2_prize)+parseFloat(el_prize)+parseFloat(H2_prize) + parseFloat(heat_prize))*FuelAmount)
+    ];
 
 
 
