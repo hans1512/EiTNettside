@@ -32,7 +32,7 @@ export default function ForecastGenerator(props) {
         <Container>
             <Box>
                 {(factor < 25) && (
-                    <Text> Meget Lavt optimismenivå</Text>
+                    <Text> Lavt optimismenivå</Text>
                 )}
                 {(24 < factor && factor < 49) && (
                     <Text>middels lavt optimismenivå</Text>
@@ -45,41 +45,6 @@ export default function ForecastGenerator(props) {
                 )}
             </Box>
 
-            <Box sx={{ minWidth: 300 }}>
-                <FormControl fullWidth>
-                    <InputLabel id="Departure">Departure</InputLabel>
-                    <Select
-                        labelId="departure-label"
-                        id="Departure"
-                        value={departure}
-                        label="Departure"
-                        onChange={handleDepartureCange}
-                    >
-                        <MenuItem value={"Oslo"}>Oslo</MenuItem>
-                        <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
-                        <MenuItem value={"New York"}>New York</MenuItem>
-                        <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
-                    </Select>
-                </FormControl>
-                <Box />
-                <Box sx={{ minWidth: 300, paddingTop: 3 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="Destination">Destination</InputLabel>
-                        <Select
-                            labelId="energikilde-label"
-                            id="energikilde"
-                            value={destination}
-                            label="Destination"
-                            onChange={handleDestinationChange}
-                        >
-                            <MenuItem value={"Oslo"}>Oslo</MenuItem>
-                            <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
-                            <MenuItem value={"New York"}>New York</MenuItem>
-                            <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Box>
-            </Box>
         </Container>
 
 
