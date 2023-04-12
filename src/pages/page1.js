@@ -35,6 +35,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 const Page1 = () => {
   const [slider1, setSlider1] = useState(20);
 

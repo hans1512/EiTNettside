@@ -2,15 +2,29 @@ import React, { useState } from "react"
 import { Slider, Box } from "@mui/material"
 import styled from 'styled-components';
 import ForecastGenerator from "../components/ForcastGenerator";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Container = styled.div`
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 `;
 
 
 export default function Forecast() {
+
+    const [destination, setDestination] = useState("")
+    const handleDestinationChange = (event: SelectChangeEvent) => {
+        setDestination(event.target.value)
+    }
+    const [departure, setDeparture] = useState("")
+    const handleDepartureCange = (event: SelectChangeEvent) => {
+        setDeparture(event.target.value)
+    }
+
 
     const marks = [{
         value: 0,
@@ -50,6 +64,41 @@ export default function Forecast() {
                         onChange={handleChangeOptimism}
                     />
                     <ForecastGenerator optimism={Optimism} />
+                </Box>
+                <Box sx={{ maxWidth: 300 }}>
+                <FormControl fullWidth>
+                    <InputLabel id="Departure">Avgang</InputLabel>
+                    <Select
+                        labelId="departure-label"
+                        id="Departure"
+                        value={departure}
+                        label="Departure"
+                        onChange={handleDepartureCange}
+                    >
+                        <MenuItem value={"Oslo"}>Oslo</MenuItem>
+                        <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
+                        <MenuItem value={"New York"}>New York</MenuItem>
+                        <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
+                    </Select>
+                </FormControl>
+                <Box />
+                <Box sx={{ maxWidth: 300, paddingTop: 3 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="Destination">Ankomst</InputLabel>
+                        <Select
+                            labelId="energikilde-label"
+                            id="energikilde"
+                            value={destination}
+                            label="Destination"
+                            onChange={handleDestinationChange}
+                        >
+                            <MenuItem value={"Oslo"}>Oslo</MenuItem>
+                            <MenuItem value={"Amstedam"}>Amsterdam</MenuItem>
+                            <MenuItem value={"New York"}>New York</MenuItem>
+                            <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
                 </Box>
             </Container>
         </div>
